@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review main</title>
+</head>
+<body align="center">
+    <form method="POST" action="/review_main">
+    {% for field in form %}
+    <tr>
+        <th>{{ field.label }}</th><br>
+        <td>{{ field }}</td><br>
+        <br>
+    </tr>
+{% endfor %}
+</form>
+
+</body>
+</html>

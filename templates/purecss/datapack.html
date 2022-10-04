@@ -1,0 +1,72 @@
+{% extends "main.html" %}
+
+{% block style %}
+label {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+input {
+font-size: 12px;
+justify-content: center;
+align-content: center;
+border: none;
+}
+
+option {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+
+span {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+form {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+select {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+textarea {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+button {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+background-color: none;
+}
+{% endblock %}
+
+{% block content %}
+
+<div style="padding-left: 25px; padding-top: 25px;">
+    <h2>Upload Datapack</h2>
+    <br>
+    <h3>Multiple File Uploads Allowed</h3>
+</div>
+<div align="center" class="pure-g">
+    <form action="/supplier" class="pure-u pure-form pure-form-aligned" enctype="multipart/form-data" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="pure-control-group pure-g">
+            <span class="pure-u" style="padding-left:25px;">{{ form.files }} </span>
+        </div>
+        <div class="pure-control-group pure-g" style="padding-left:25px;">
+            <button class="button">{{ form.submit }}</button>
+        </div>
+    </form>
+
+</div>
+
+<div class="pure-g"><p class="pure-u" style="font-size: 12px; padding-left: 25px;">Files Uploaded This Session: {{ uploaded_files }}</p></div>
+
+{% endblock %}

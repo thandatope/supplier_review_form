@@ -1,0 +1,17 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+<div class="row-fluid">
+
+    <div>
+        <h1>Admin Section Test</h1>
+        <br>
+        <br>
+        <a href="{{ url_for('.filemanager) }}">manage ur files</a>
+        <br><br>
+        <a href="{{ url_for('.dbmanager) }}">manage ur db</a>
+    </div>
+
+    <a class="btn btn-primary" href="/"><i class="icon-arrow-left icon-white"></i> Back</a>
+</div>
+{% endblock body %}

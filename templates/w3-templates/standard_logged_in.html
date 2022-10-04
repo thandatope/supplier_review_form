@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+      <div class="w3-center w3-padding-large w3-black w3-medium w3-animate-opacity">
+    <form method="POST" action="/review_main" >
+        {{ form.csrf_token }}
+{% if form.csrf_token.errors %}
+    <div class="warning">You have submitted an invalid CSRF token</div>
+{% endif %}
+
+    {% for field in form %}
+        <div>
+    <tr>
+        <th>{{ field.label }}</th><br>
+        <td>{{ field }}</td><br>
+        <br>
+    </tr>
+            </div>
+{% endfor %}
+          </form>
+           </div>
+    </div>
+</div>
+
+{% endblock %}

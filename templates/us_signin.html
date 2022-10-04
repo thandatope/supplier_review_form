@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block style %}
+label {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+input {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+
+option {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+
+span {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+form {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+select {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+textarea {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+{% endblock %}
+{% block content %}
+<body style="background-color: rgba(250, 250, 250, 1);">
+{% include "_nav.html" %}
+{% include "_flash.html" %}
+<div style="font-size: 14px; padding-left: 25px; padding-top: 25px;">
+    <span class="pure-u pure-form pure-form-aligned">
+{% include "security/us_signin.html" %}
+    </span>
+</div>
+</body>
+{% endblock %}
+

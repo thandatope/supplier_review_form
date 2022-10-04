@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+
+{% block style %}
+label {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+input {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+
+option {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+
+span {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+form {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+select {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+textarea {
+font-size: 14px;
+justify-content: center;
+align-content: center;
+}
+{% endblock %}
+{% block content %}
+<div style="padding-left: 25px; padding-top: 25px;">
+<h2>Supplier Re-approval Form</h2>
+<br>
+</div>
+<div class="pure-g" align="center">
+    <form action="/supplier" class="pure-u pure-form pure-form-aligned" method="POST">
+        <fieldset>
+            {{ form.hidden_tag() }}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+            <div class="pure-control-group pure-g">
+                <span class="pure-u"> {{ field.label }}</span> <br><span class="pure-u"> {{ field }} </span>
+            </div>
+            {% endfor %}
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
