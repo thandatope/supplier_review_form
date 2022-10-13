@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+
+{% block style %}
+
+.image img {
+position: sticky;
+padding: 5%;
+height: 40%;
+width: 50%;
+max-height: 400px;
+max-width: 500px;
+}
+
+{% endblock %}
+
+{% block content %}
+
+<section class="section is-centered">
+    <div align="center" class="container front-theme rssl-font">
+        <div class="box">
+            <figure class="image media-center">
+                <img href="https://www.rssl.com/"
+                     src="https://www.rssl.com/assets/images/rssl-logo.png">
+            </figure>
+            <p align="center" class="title is-size-4">Welcome to the RSSL Supplier Portal</p>
+            <p align="center">
+    <form enctype="multipart/form-data" method="POST">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+        <div class="field is-size-6">
+            <span> {{ field.label }}</span>
+            <div class="control">
+                <span> {{ field }} </span>
+
+            </div>
+        </div>
+        {% endfor %}
+        <br>
+        <div class="block" align="center">
+            <button action="submit" class="button is-primary">Submit</button>
+                <br>
+                <br>
+            </div>
+</section>
+
+{% endblock %}
+

@@ -1,0 +1,20 @@
+<nav aria-label="main navigation" class="navbar is-fixed-top is-primary has-shadow is-spaced" role="navigation">
+    <div class="navbar-brand">
+        <p>RSSL</p>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="burgerbar" role="button">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu"
+         style="text-color: white; background-color: #00d1b2;">
+        <div class="navbar-start ">
+            <a class="navbar-item" href="{{ url_for('home.index') }}"> Home </a>
+            <a class="navbar-item" href="https://www.rssl.com"> RSSL Website </a>
+            <a class="navbar-item" href="{{ url_for('home.contact') }}"> Contact Us </a>
+        </div>
+    </div>
+</nav>
+
