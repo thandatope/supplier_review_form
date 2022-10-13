@@ -1,0 +1,71 @@
+{% extends "main.html" %}
+
+{% block style %}
+.file-upload {
+padding: 1em;
+}
+
+
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <h2 class="title is-3" align="center">Upload Datapack</h2>
+    <h3 class="subtitle is-3" align="center">Multiple File Uploads Allowed</h3>
+<div align="center" class="box">
+    <form action="/supplier/datapack" enctype="multipart/form-data" method="POST" onsubmit="loading()" id="datapack-form">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+        <div class="field">
+            <span> {{ field.label }}</span>
+            <div class="control is-large">
+                <span> {{ field }} </span>
+
+            </div>
+        </div>
+        {% endfor %}
+        <br>
+        <div id="datapack-upload" class="file is-centered is-primary file-upload has-name is-boxed">
+          <label class="file-label">
+            <input class="file-input" type="file" multiple="multiple" id="datapack-upload-input" name="datapack">
+            <span class="file-cta">
+              <span class="file-label">
+                Upload
+              </span>
+            </span>
+                <span class="file-name">
+      No file uploaded
+    </span>
+          </label>
+          </div>
+
+        <div class="block" align="center">
+            <button class="button is-primary" type="submit">Submit</button>
+        </div>
+    </form>
+                <div hidden="hidden" id="submit_progress">
+                    <h3 align="center" class="title is-3">Submitting Datapack...</h3>
+            <progress class="progress is-danger" max="100" id="progbar">10%</progress>
+            </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+function loading() {
+    var progressbar = document.getElementById("submit_progress");
+    var form = document.getElementById("datapack-form");
+    form.setAttribute("hidden", "hidden");
+    progressbar.removeAttribute("hidden");
+
+}
+
+  const fileInput = document.querySelector('#datapack-upload input[type=file]');
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector('#datapack-upload .file-name');
+      fileName.textContent = fileInput.files[0].name;
+    }
+  }
+
+{% endblock %}
