@@ -1,7 +1,0 @@
-{% for category, message in get_flashed_messages(with_categories=True) %}
-
-        <div class="notification is-{{ category }} is-light">
-            <button class="delete"></button>
-            <p align="center">{{ message }}</p>
-        </div>
-{% endfor %}

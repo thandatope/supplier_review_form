@@ -1,0 +1,20 @@
+{
+  "1": {
+    "Card Title": "New Supplier Questionnaire",
+    "Card Body": "Are you a new supplier?<br><br>Complete the new supplier questionnaire here.",
+    "Card Button Text": "New Supplier",
+    "Card Target": "new_supplier.new_supplier_form"
+  },
+  "2": {
+    "Card Title": "Current Supplier Review",
+    "Card Body": "Contacted about a scheduled supplier review?<br><br>Complete the supplier review questionnaire here.",
+    "Card Button Text": "Supplier Review",
+    "Card Target": "review_form.review_form"
+  },
+  "3": {
+    "Card Title": "Submit Datapack",
+    "Card Body": "Wish to submit a datapack instead of completion a review questionnaire?<br><br>Submit your datapack here.",
+    "Card Button Text": "Submit Datapack",
+    "Card Target": "datapack.datapack"
+  }
+}

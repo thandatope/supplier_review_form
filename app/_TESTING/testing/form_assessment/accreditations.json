@@ -1,0 +1,27 @@
+{
+  "media": [
+    "ISO 9001",
+    "ISO 17025"
+  ],
+  "prof": [
+    "ISO 9001",
+    "ISO 17034"
+  ],
+  "calibration": [
+    "ISO 9001",
+    "ISO 17025"
+  ],
+  "subcon": [
+    "ISO 9001",
+    "ISO 17025"
+  ],
+  "test_kits": [
+    "ISO 9001"
+  ],
+  "archiving": [
+    "ISO 9001"
+  ],
+  "confidential": [
+    "ISO 9001"
+  ]
+}

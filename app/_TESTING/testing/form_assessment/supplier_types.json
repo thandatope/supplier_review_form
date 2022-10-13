@@ -1,0 +1,20 @@
+{
+  "quality_list"
+  : [
+  "media",
+  "prof",
+  "calibration",
+  "subcon",
+  "test_kits",
+  "archiving",
+  "confidential"
+],
+"business_list" : [
+  "vendor",
+  "servicing",
+  "facilities"
+],
+"other_list" : [
+  "other"
+]
+}

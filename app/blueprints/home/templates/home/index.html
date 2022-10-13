@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+
+<section class="section is-centered">
+    <div align="center" class="container">
+        <div class="box front-box">
+            <figure class="image media-center">
+                <img class="front-logo" href="https://www.rssl.com/"
+                     src="{{ url_for('static', filename='RSSL_Logo.svg') }}">
+            </figure>
+            <p align="center" class="title is-size-4">Welcome to the RSSL Supplier Portal</p>
+            <p align="center" class="subtitle is-size-5">Please verify your email address below</p>
+            <p align="center">
+    <form enctype="multipart/form-data" method="POST">
+        {{ form.hidden_tag() }}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+        <div class="field is-size-6">
+            <span> {{ field.label }}</span>
+            <div class="control">
+                <span> {{ field }} </span>
+
+            </div>
+        </div>
+        {% endfor %}
+        <br>
+        <div class="block" align="center">
+            <button action="submit" class="button is-primary">Submit</button>
+                <br>
+                <br>
+            </div>
+</section>
+
+{% endblock %}
+

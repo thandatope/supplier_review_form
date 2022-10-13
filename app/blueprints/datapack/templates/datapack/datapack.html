@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+
+{% block style %}
+.file-upload {
+padding: 1em;
+}
+
+
+{% endblock %}
+
+{% block content %}
+<section class="section">
+	<h2 align="center" class="title form-title is-3">Upload Datapack</h2>
+	<h3 align="center" class="subtitle form-title is-3">Multiple File Uploads Allowed</h3>
+	<div align="center" class="field">
+		<form action="/supplier/datapack" enctype="multipart/form-data" id="datapack-form" method="POST"
+		      onsubmit="loading()">
+			<div class="box form-box">
+				{{ form.hidden_tag() }}
+				{% for field in form if field.widget.input_type != 'hidden' %}
+				<div class="field">
+					<span> {{ field.label }}</span>
+					<div class="control is-large">
+						<span> {{ field }} </span>
+					</div>
+				</div>
+				{% endfor %}
+				<br>
+				<div class="file is-boxed review-upload is-centered is-primary" id="datapack-upload">
+					<label class="file-label">
+						<span class="file-input">
+						<input id="datapack-upload-input" multiple="multiple" name="datapack"
+						       type="file">
+							</span>
+						<span class="file-cta">
+              <span class="file-label">Upload</span>
+            </span>
+						<span class="file-name review-filename">No file uploaded</span>
+					</label>
+				</div>
+				<br>
+				<div align="center" class="block">
+					<button class="button is-primary" type="submit">Submit</button>
+				</div>
+			</div>
+		</form>
+		<div hidden="hidden" id="submit_progress">
+			<h3 align="center" class="title is-3">Submitting Datapack...</h3>
+			<progress class="progress is-danger" id="progbar" max="100">10%</progress>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+{% block script %}
+
+const fileInput = document.querySelector('#datapack-upload input[type=file]');
+const fileName = document.querySelector('#datapack-upload .file-name');
+fileInput.addEventListener('change', (event) => {
+const files = event.target.files;
+fileName.textContent = "";
+for (const file of files) {
+const li = document.createElement('li');
+li.textContent = file.name;
+li.classList.add("upload-list")
+fileName.appendChild(li);
+}
+})
+
+function loading() {
+var progressbar = document.getElementById("submit_progress");
+var form = document.getElementById("review_form");
+form.setAttribute("hidden", "hidden");
+progressbar.removeAttribute("hidden");
+
+}
+
+{% endblock %}

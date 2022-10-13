@@ -1,0 +1,115 @@
+{
+  "scoring": {
+    "quality": {
+      "score_thresholds": {
+        "lower_score_threshold": -30,
+        "upper_score_threshold": -5
+      },
+      "ratings": {
+        "top": "Good",
+        "middle": "OK",
+        "bottom": "Poor"
+      }
+    }
+  },
+  "supplier_accreditations": {
+    "media": [
+      "ISO 9001",
+      "ISO 17025"
+    ],
+    "prof": [
+      "ISO 9001",
+      "ISO 17034"
+    ],
+    "calibration": [
+      "ISO 9001",
+      "ISO 17025"
+    ],
+    "subcon": [
+      "ISO 9001",
+      "ISO 17025"
+    ],
+    "test_kits": [
+      "ISO 9001"
+    ],
+    "archiving": [
+      "ISO 9001"
+    ],
+    "confidential": [
+      "ISO 9001"
+    ]
+  },
+  "supplier_types": {
+    "quality_list": [
+      "media",
+      "prof",
+      "calibration",
+      "subcon",
+      "test_kits",
+      "archiving",
+      "confidential"
+    ],
+    "business_list": [
+      "vendor",
+      "servicing",
+      "facilities"
+    ],
+    "other_list": [
+      "other"
+    ]
+  },
+  "review_weightings": {
+    "QUALITY": {
+      "company_change": -5,
+      "company_change_comment": "Significant company changes indicated.",
+      "company_change_action": "Review details of company change and consider impact.",
+      "no_company_change": 0,
+      "no_company_change_comment": "No significant company changes indicated.",
+      "accreditation_change": -10,
+      "accreditation_change_comment": "Accreditation changes indicated.",
+      "accreditation_change_action": "Confirm accreditation held is still appropriate for services provided.",
+      "no_accreditation_change": 0,
+      "no_accreditation_change_comment": "No changes in company accreditation indicated.",
+      "no_attachments": -10,
+      "no_attachments_comment": "No attachments provided.",
+      "no_attachments_action": "If relevant, obtain certificates and other documentation and review.",
+      "has_attachments": 5,
+      "has_attachments_comment": "Attachments have been provided. Confirm attachments suitable."
+    },
+    "BUSINESS": {
+      "company_change": -5,
+      "company_change_comment": "Significant company changes indicated.",
+      "no_company_change": 0,
+      "no_company_change_comment": "No significant company changes indicated.",
+      "no_attachments": -5,
+      "no_attachments_comment": "No attachments provided.",
+      "has_attachments": 5,
+      "has_attachments_comment": "Attachments have been provided. Confirm attachments suitable."
+    },
+    "OTHER": {
+      "company_change": -5,
+      "company_change_comment": "Significant company changes indicated.",
+      "no_company_change": 0,
+      "no_company_change_comment": "No significant company changes indicated.",
+      "no_attachments": 0,
+      "no_attachments_comment": "No attachments provided.",
+      "has_attachments": 0,
+      "has_attachments_comment": "Attachments have been provided. Confirm attachments suitable."
+    }
+  },
+  "score_fields": {
+    "quality": [
+      "company_change",
+      "accreditation_change",
+      "certifications"
+    ],
+    "business": [
+      "company_change",
+      "certifications"
+    ],
+    "other": [
+      "company_change",
+      "certifications"
+    ]
+  }
+}

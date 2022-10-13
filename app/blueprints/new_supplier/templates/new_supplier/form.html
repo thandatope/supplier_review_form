@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+
+{% block content %}
+<section class="section is-centered">
+	<h3 align="center" class="title form-title is-3">New Supplier Approval Form</h3>
+	<div align="center" class="field">
+		<form action="/supplier/form" id="review_form" method="POST" onsubmit="loading()">
+			{{ form.hidden_tag() }}
+			{% for field in form if field.widget.input_type != 'hidden' %}
+			<div class="box form-box">
+				{% if field.type == "MultipleFileField" %}
+				<div class="field">
+					<span class="label">{{ field.label }}</span>
+					<div class="file is-boxed review-upload is-centered is-primary" id="review-file-upload">
+						<label class="file-label">
+					<span class="file-input">
+						{{ field }}
+					</span>
+							<span class="file-cta">
+				  <span class="file-icon">
+				    <i class="fas fa-upload"></i>
+				  </span>
+				</span>
+							<span class="file-name review-filename">No files selected.</span>
+						</label>
+					</div>
+				</div>
+			</div>
+			{% else %}
+
+			<div class="field">
+				<span class="label"> {{ field.label }}</span>
+
+
+				<div class="control is-large">
+					<span> {{ field }} </span>
+
+				</div>
+			</div>
+	</div>
+	{% endif %}
+	{% endfor %}
+	<div align="center" class="block">
+		<button class="button is-primary is-medium" type="submit">Submit</button>
+	</div>
+	</form>
+	<div hidden="hidden" id="submit_progress">
+		<h3 align="center" class="title is-3">Submitting Form...</h3>
+		<progress class="progress is-danger" id="progbar" max="100">10%</progress>
+	</div>
+	</div>
+</section>
+{% endblock %}
+
+
+{% block script %}
+
+const fileInput = document.querySelector('#review-file-upload input[type=file]');
+const fileName = document.querySelector('#review-file-upload .file-name');
+fileInput.addEventListener('change', (event) => {
+const files = event.target.files;
+fileName.textContent = "";
+for (const file of files) {
+const li = document.createElement('li');
+li.textContent = file.name;
+li.classList.add("upload-list")
+fileName.appendChild(li);
+}
+})
+
+function loading() {
+var progressbar = document.getElementById("submit_progress");
+var form = document.getElementById("review_form");
+form.setAttribute("hidden", "hidden");
+progressbar.removeAttribute("hidden");
+
+}
+
+{% endblock %}

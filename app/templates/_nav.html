@@ -1,0 +1,31 @@
+<nav aria-label="main navigation" class="navbar is-fixed-top rssl-navbar has-shadow" role="navigation">
+  <div class="navbar-brand">
+	  <a class="navbar-item" href="https://www.rssl.com">
+		  <img src="{{ url_for('static', filename='RSSL_Logo.svg') }}">
+	  </a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="burgerbar" role="button">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+	        <a class="navbar-item" href="{{ url_for('home.supplier') }}"> Home </a>
+	        <a class="navbar-item" href="{{ url_for('home.contact') }}"> Contact Us </a>
+        </div>
+	    	{% if session['email_confirmed'] == True %}
+	<div class="navbar-end">
+		<a class="navbar-item" href="{{ url_for('home.logout') }}">Logout</a>
+			</div>
+	</div>
+	{% else %}
+		<div class="navbar-end">
+			<a class="navbar-item" href="{{ url_for('home.login') }}">Login</a>
+	</div>
+	{% endif %}
+    </div>
+
+</nav>
+
