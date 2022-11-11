@@ -1,0 +1,31 @@
+textarea {
+width: 40%;
+max-width: 25em;
+min-height: 8em;
+}
+input {
+width: 40%;
+max-width: 25em;
+}
+input[type="submit" i] {
+width: 8em;
+height: 2em;
+max-width: 150px;
+}
+select {
+width: 75%;
+max-width: 40em;
+overflow-wrap: break-word;
+}
+.progbar {
+width: 50%;
+height: 5%;
+padding: 15%;
+}
+.form-box {
+width: 60%;
+max-width: 80%;
+}
+.h3 {
+width:40%;
+}

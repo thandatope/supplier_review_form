@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+html {
+    hyphens: auto;
+    align-content: center;
+    align-items: center;
+    background: #F3F0EE;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+box-sizing: border-box;
+display: flex;
+flex-wrap: wrap;
+}
+
+@page { size: A4; margin: 1cm }
+
+.report {
+  font-size: 12px;
+  font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid black;
+  background-color: #F3F0EE;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.report td {
+     border: 1px solid darkgrey;.
+     padding: 0.1em;
+     line-height: 1.1;
+}
+
+.report tr:nth-child(even) {
+    background-color: #E6E7E8;
+}
+
+.report tr:hover {
+    background-color: lightgrey;
+}
+
+.report th {
+  text-align: center;
+  font-weight: bold;
+  background-color: #fb9dd4;
+  padding: 0.25em;
+  border: 1px solid black;
+}
+.report th:nth-child(1) {
+    width: 15%;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    max-width: 300px;
+}
+.report tr {
+    text-align: center;
+}
+.report-title {
+    font-size: 20px;
+    color: #58595B;
+    font-weight: bold;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+.report-subtitle {
+    font-size: 16px;
+    color: #58595B;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+.report-footer {
+    font-size: 12px;
+    font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+.report-header {
+    text-align: center;
+    width: 100%;
+}
+
+{% block style %}
+{% endblock %}
+    </style>
+</head>
+
+<body>
+    {% block content %}
+    {% endblock %}
+
+<footer class="report-footer">
+    <p>Report generated on: {{ today }} </p>
+    <p>RSSL QAU</p>
+</footer>
+</body>
+</html>

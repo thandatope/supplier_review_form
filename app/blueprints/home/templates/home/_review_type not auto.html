@@ -1,0 +1,142 @@
+{% extends "main.html" %}
+
+{% block style %}
+label {
+font-size: 20px;
+}
+input {
+@include input
+}
+.content:not(:last-child) {
+min-height: 7em;
+}
+.card-footer-item {
+padding: 0;
+padding-top: 1rem;
+}
+{% endblock %}
+{% block content %}
+
+<section class="section is-centered">
+	<div align="center" class="container front-theme rssl-font">
+		<div class="box">
+			<div class="columns">
+				<div class="column">
+					<div class="card">
+						<header class="card-header">
+							<p class="card-header-title is-centered">New Supplier Questionnaire</p>
+						</header>
+						<div class="card-content">
+							<div class="content">
+								<p>Are you a new supplier? <br><br>Complete the new supplier questionnaire here.</p>
+							</div>
+							<div class="card-footer">
+                                    <span class="card-footer-item is-centered">
+                                    <a class="button is-primary is-normal has-text-weight-normal"
+                                       href="{{ url_for('home.supplier') }}">
+                                        New Supplier<br>(not yet implemented)
+                                    </a>
+                                    </span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="column">
+					<div class="card">
+						<header class="card-header">
+							<p class="card-header-title is-centered is-2">Supplier Review Questionnaire</p>
+						</header>
+						<div class="card-content">
+							<div class="content">
+								<p>Contacted about a scheduled supplier review?<br><br>Complete the supplier review
+									questionnaire here.</p>
+							</div>
+							<div class="card-footer">
+                                    <span class="card-footer-item is-centered">
+                                    <a class="button is-primary is-normal has-text-weight-normal"
+                                       href="{{ url_for('review_form.review_form') }}">
+                                        Supplier Review
+                                    </a>
+                                    </span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="column">
+					<div class="card">
+						<header class="card-header">
+							<p class="card-header-title is-centered">Submit Datapack</p>
+						</header>
+						<div class="card-content">
+							<div class="content">
+								<p>Wish to submit a datapack instead of completion a review questionnaire? <br><br>Submit
+									your datapack here. </p>
+							</div>
+							<div class="card-footer">
+                                    <span class="card-footer-item is-centered">
+                                    <a class="button is-primary is-normal has-text-weight-normal"
+                                       href="{{ url_for('datapack.datapack') }}">
+                                        Submit Datapack
+                                    </a>
+                                    </span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="columns">
+				<div class="column">
+					<div class="card">
+						<header class="card-header new-supplier-title">
+							<p class="card-header-title is-centered">Other Stuff</p>
+						</header>
+						<div class="card-content">
+							<div class="content">
+								<p>This is where training or whoever could put their bits if they still want to look
+									into using this too.
+
+									Will probably use these boxes for the forms and stuff as they look much smarter.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box">
+			<div class="columns">
+				<div class="column">
+					<div class="card">
+						<header class="card-header supplier-review-title">
+							<p class="card-header-title is-centered">Other Stuff</p>
+						</header>
+						<div class="card-content">
+							<div class="content">
+								<p>More bits and bobs if anything would be handy</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="card">
+						<header class="card-header datapack-title">
+							<p class="card-header-title is-centered">Other Stuff</p>
+						</header>
+						<div class="card-content">
+							<div class="content">
+								<p>More bits and bobs if anything would be handy part 2</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
